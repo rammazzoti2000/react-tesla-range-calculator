@@ -1,18 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './TeslaClimate.css';
-const TeslaClimate = (props) => (
+
+const TeslaClimate = ({ value, limit, handleChangeClimate }) => (
   <div className="tesla-climate">
     <label
-      className={`tesla-climate__item ${props.value ? 'tesla-climate__item--active' : '' }  ${!props.limit ? 'tesla-heat':''}`}
+      className={`tesla-climate__item ${value ? 'tesla-climate__item--active' : '' }  ${!limit ? 'tesla-heat':''}`}
     >
-      <p>{props.limit ? 'ac' : 'heat'} {props.value ? 'on' : 'off'}</p>
+      <p>{limit ? 'ac' : 'heat'} {value ? 'on' : 'off'}</p>
       <i className="tesla-climate__icon"></i>
       <input
         type="checkbox"
         name="climate"
-        checked={props.value}
-        onChange={() => {props.handleChangeClimate()}}
+        checked={value}
+        onChange={() => {handleChangeClimate()}}
       />
     </label>
   </div>
