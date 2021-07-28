@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './TeslaStats.css';
 
-const TeslaStats = (props) => {
-  const listItems = props.carstats.map((stat) => (
+const TeslaStats = ({ carstats }) => {
+  const listItems = carstats.map((stat) => (
     <li key={stat.model}>
       <div className={`tesla-stats-icon tesla-stats-icon--${stat.model.toLowerCase()}`}></div>
       <p>{stat.miles}</p>
